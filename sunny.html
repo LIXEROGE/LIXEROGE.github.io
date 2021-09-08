@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>刘予煊的贪吃蛇</title>
+<title>教师节快乐-刘予煊</title>
 
 </head>
 <body>
@@ -81,20 +81,20 @@
 		}
 		
 	}
-	j=0;
+	j=730;
 	var iden=setInterval(function(){
 		ctx.clearRect(0,0,800,400);
-		var linearGradient = ctx.createLinearGradient(0,0,500,500);
- 		linearGradient.addColorStop(0,'pi'+'nk');
+		//var linearGradient = ctx.createLinearGradient(0,0,500,500);
+ 		/*linearGradient.addColorStop(0,'pi'+'nk');
  		linearGradient.addColorStop(0.5,'red');
 		linearGradient.addColorStop(0.8,'orange');
  		linearGradient.addColorStop(1,'blue');
- 		//ctx.fillStyle = linearGradient;
+ 		//*///ctx.fillStyle = linearGradient;
 		for(i=0;i<400;i+=10){
 			cvs.fillStyle=color((i+j)%(6*255));
 			cvs.fillRect(0,i,800,10);
 		}
-		j+=5;
+		j+=10;
 		if(j>6*255){
 			j=0;
 		}
@@ -102,14 +102,32 @@
 		ctx.font="80px Georgia";
 		ctx.fillStyle=color((j+200+3*255)%(6*255))
 		ctx.fillText("祝孙老师",90,140);
+		ctx.font="80px Georgia";
+		ctx.fillStyle=color((j+300+3*255)%(6*255))
+		ctx.fillText("祝孙老师",92,142);
+		ctx.fillStyle=color((j+200+3*255)%(6*255))
+		ctx.font="30px Georgia";
+		ctx.fillText("(Teacher Sunny)",490,140);
+		
 		ctx.font="120px Georgia";
 		//ctx.fillStyle="#0000FF"
 		ctx.fillText("教师节快乐！",90,290);
 		//ctx.fillStyle="#0000FF"
+		ctx.font="120px Georgia";
+		ctx.fillStyle=color((j+300+3*255)%(6*255))
+		ctx.fillText("教师节快乐！",93,293);
+		//ctx.fillStyle="#0000FF"
 		ctx.font="30px Georgia";
-		ctx.fillText(rgb(132,255,0),90,370);
+		ctx.fillStyle=color((j+200+3*255)%(6*255))
+		ctx.fillText("Happy Teachers' Day!                            您的学生 刘予煊",90,370);
 		
-	},100);
+		var img=new Image();
+		 	img.onload=function() {
+		 	context.drawImage(img,660,190,120,200 );
+		 };
+		  img.src="flower.png";
+		
+	},200);
 	function displayDate(){
 		db=1;
 		quickly=1;
