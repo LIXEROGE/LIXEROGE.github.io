@@ -84,17 +84,17 @@
 	j=730;
 	var iden=setInterval(function(){
 		ctx.clearRect(0,0,800,400);
-		var linearGradient = ctx.createLinearGradient(0,0,500,500);
- 		linearGradient.addColorStop(0,'pi'+'nk');
+		//var linearGradient = ctx.createLinearGradient(0,0,500,500);
+ 		/*linearGradient.addColorStop(0,'pi'+'nk');
  		linearGradient.addColorStop(0.5,'red');
 		linearGradient.addColorStop(0.8,'orange');
  		linearGradient.addColorStop(1,'blue');
- 		//ctx.fillStyle = linearGradient;
+ 		//*///ctx.fillStyle = linearGradient;
 		for(i=0;i<400;i+=10){
 			cvs.fillStyle=color((i+j)%(6*255));
 			cvs.fillRect(0,i,800,10);
 		}
-		j+=5;
+		j+=10;
 		if(j>6*255){
 			j=0;
 		}
@@ -127,7 +127,7 @@
 		 };
 		  img.src="flower.png";
 		
-	},150);
+	},200);
 	function displayDate(){
 		db=1;
 		quickly=1;
