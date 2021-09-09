@@ -81,6 +81,10 @@
 		}
 		
 	}
+	var img=new Image();
+		 	img.onload=function() {
+		 	context.drawImage(img,661,180,120,200 );
+		 };
 	j=930;
 	var iden=setInterval(function(){
 		ctx.clearRect(0,0,800,400);
@@ -119,12 +123,9 @@
 		//ctx.fillStyle="#0000FF"
 		ctx.font="30px Georgia";
 		ctx.fillStyle=color((j+200+3*255)%(6*255))
-		ctx.fillText("HAPPY TEACHERS' DAY！                           您的学生 刘予煊",90,370);
+		ctx.fillText("HAPPY TEACHERS' DAY！                      您的学生 刘予煊",90,370);
 		
-		var img=new Image();
-		 	img.onload=function() {
-		 	context.drawImage(img,661,180,120,200 );
-		 };
+		
 		  img.src="flower.png";
 		
 	},230);
