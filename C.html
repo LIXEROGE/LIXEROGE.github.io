@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>祝李老师教师节快乐-刘予煊</title>
+
+</head>
+<body>
+	
+	<canvas id="myCanvas" width="800" height="400"/>
+	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script>
+	var i=0,j=0,k=0;
+	var canvas = document.getElementById("myCanvas"); 　　
+    var context = canvas.getContext("2d"); 　
+	var ctx=context;
+	var cvs=context;
+	var ls=[],buf,eated;
+	var sx=0,sy=0;
+	sx=Math.floor(Math.random()*10)+6;
+	sy=Math.floor(Math.random()*10)+6;
+	var fx=0,fy=1,x=0,y=0,t=0,tt=0;;
+	var snk=[[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0]];
+	for(i=0;i<20;i++){
+		ls.push([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+	}
+	i=0;//*/
+	context.fillStyle = "#F00000"; 　
+	
+	var quickly=0;
+	
+	
+	    // 可均衡获取 0 到 9 的随机整数
+	$(document).keydown(function(e){
+        var key =  e.which;
+        if(key == 27){
+             alert('按ESC键');
+        }else{
+			
+		}
+	});
+	
+    
+	$(document).keyup(function(e){
+		var key =  e.keyCode;
+		if(key==32){
+				quickly=0;
+			}
+	});
+	canvas.addEventListener("mousedown",displayDate,false);
+	canvas.addEventListener("mouseup",displayDatt,false);
+	var db=0;
+	function tf(k){
+		var a=Math.floor(k/16),b=k%16;
+		var sls=['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+		return ""+sls[a]+sls[b];
+	}
+	function rgb(r,g,b){
+		return "#"+tf(r)+tf(g)+tf(b);
+	}
+	function color(time){
+		//0<=time<=6*255
+		if(time<1*255){
+			return rgb(0,0,time);
+		}
+		if(time<2*255){
+			return rgb(0,time-1*255,254);
+		}
+		if(time<3*255){
+			return rgb(time-2*255,255,255);
+		}
+		
+		if(time<4*255){
+			return rgb(254,254,255-(time-3*255));
+		}
+		if(time<5*255){
+			return rgb(254,255-(time-4*255),0);
+		}
+		if(time<6*255){
+			return rgb(255-(time-5*255),0,0);
+		}
+		
+	}
+	j=820;
+	
+	var img=new Image();
+		 	//img.onload=function() {
+		 
+		 
+		  img.src="flower.png";
+	
+	var iden=setInterval(function(){
+		ctx.clearRect(0,0,800,400);
+		//var linearGradient = ctx.createLinearGradient(0,0,500,500);
+ 		/*linearGradient.addColorStop(0,'pi'+'nk');
+ 		linearGradient.addColorStop(0.5,'red');
+		linearGradient.addColorStop(0.8,'orange');
+ 		linearGradient.addColorStop(1,'blue');
+ 		//*///ctx.fillStyle = linearGradient;
+		for(i=0;i<400;i+=10){
+			cvs.fillStyle=color((i+j)%(6*255));
+			cvs.fillRect(0,i,800,10);
+		}
+		j+=10;
+		if(j>6*255){
+			j=0;
+		}
+ 		//ctx.fillRect(00,00,800,400);
+		ctx.font="80px Georgia";
+		ctx.fillStyle=color((j+200+3*255)%(6*255))
+		ctx.fillText("祝陈老师",90,140);
+		ctx.font="80px Georgia";
+		ctx.fillStyle=color((j+300+3*255)%(6*255))
+		ctx.fillText("祝陈老师",92,142);
+		ctx.fillStyle=color((j+200+3*255)%(6*255))
+		ctx.font="30px Georgia";
+		ctx.fillText("(科学老师)",490,140);
+		
+		ctx.font="120px Georgia";
+		//ctx.fillStyle="#0000FF"
+		ctx.fillText("教师节快乐！",90,290);
+		//ctx.fillStyle="#0000FF"
+		ctx.font="120px Georgia";
+		ctx.fillStyle=color((j+300+3*255)%(6*255))
+		ctx.fillText("教师节快乐！",93,293);
+		//ctx.fillStyle="#0000FF"
+		ctx.font="30px Georgia";
+		ctx.fillStyle=color((j+200+3*255)%(6*255))
+		ctx.fillText("Happy  Teachers'  Day!                  ----您的学生 刘予煊",40,370);
+		
+		
+		cvs.drawImage(img,670,190,120,200 );
+	},200);
+	function displayDate(){
+		db=1;
+		quickly=1;
+	}
+	function displayDatt(){
+		db=0;
+		quickly=0;
+	}
+</script>
+
+
+
+
+</body>
+</html>
