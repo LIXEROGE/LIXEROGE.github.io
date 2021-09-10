@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+
+</head>
+<body>
+	
+	<canvas id="myCanvas" width="800" height="400"/>
+	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script>
+	var i=0,j=0,k=0;
+	var canvas = document.getElementById("myCanvas"); 　　
+    var context = canvas.getContext("2d"); 　
+	var ctx=context;
+	var cvs=context;
+	var ls=[],buf,eated;
+	
+	$(document).keydown(function(e){
+        //按下按键后出发
+        var key =  e.which;
+        if(key == 27){//ASCII码啦
+             alert('按ESC键了');
+        }else{
+			
+		}
+	});
+	
+    
+	$(document).keyup(function(e){
+      //同理，抬起按键触发
+      //---
+      //按下按键只会出发一次keydown，和GetAsyncKeyState不一样
+		var key =  e.keyCode;
+		if(key==32){
+				quickly=0;
+			}
+	});
+	canvas.addEventListener("mousedown",displayDate,false);//鼠标按下
+  //--------------
+  //displayDatt和displayDatt在后面都有定义，是函数
+  
+	canvas.addEventListener("mouseup",displayDatt,false);
+	var db=0;
+	function tf(k){
+		var a=Math.floor(k/16),b=k%16;
+		var sls=['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+		return ""+sls[a]+sls[b];
+	}
+	function rgb(r,g,b){
+		return "#"+tf(r)+tf(g)+tf(b);
+	}
+	function color(time){
+		//0<=time<=6*255
+		if(time<1*255){
+			return rgb(0,0,time);
+		}
+		if(time<2*255){
+			return rgb(0,time-1*255,254);
+		}
+		if(time<3*255){
+			return rgb(time-2*255,255,255);
+		}
+		
+		if(time<4*255){
+			return rgb(254,254,255-(time-3*255));
+		}
+		if(time<5*255){
+			return rgb(254,255-(time-4*255),0);
+		}
+		if(time<6*255){
+			return rgb(255-(time-5*255),0,0);
+		}
+		
+	}
+	var img=new Image();//这两行
+	img.src="flower.png";//是见图片，flower.png不用说了吧
+  
+  
+	var iden=setInterval(function(){
+		ctx.clearRect(0,0,800,400);//轻触屏幕，别动（
+		
+		for(i=0;i<400;i+=10){
+			cvs.fillStyle=color((i+j)%(6*255));//不用管，换颜色的（和C++很想，但是color
+          //                                    在前面定义了，而且
+          //                                  js是若语言，"he"+1会变成"he1"
+          
+			cvs.fillRect(0          ,i    ,800   ,10);//话长方形
+          //             左上x      左上y  长度   宽度 
+		}
+		j+=10;
+		if(j>6*255){
+			j=0;
+		}
+ 		//ctx.fillRect(00,00,800,400);
+		ctx.fillStyle=color((j+200+3*255)%(6*255))
+		cvs.fillRect(0,50,800,5);
+		cvs.fillRect(220,0,5,50);
+		ctx.font="40px Georgia";
+		ctx.fillText("KY网站主页",0,40);
+		
+		ctx.font="80px Georgia";
+		
+		ctx.fillText("抱歉，网站维修中",0,140);
+		ctx.font="30px Georgia";
+		ctx.fillText("开工时间:\n2021/9/10",0,260);
+		ctx.fillText("请谅解    维修人员：刘予煊",0,200);
+		
+		
+		cvs.drawImage(img,11,190,120,200 );//参数和rect一样
+		
+		  
+		
+	},200);
+	function displayDate(){
+		db=1;
+		quickly=1;
+	}
+	function displayDatt(){
+		db=0;
+		quickly=0;
+	}
+  
+  //bete 0.0.1
+</script>
+</body>
+</html>
